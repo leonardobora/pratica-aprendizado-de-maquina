@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "name": "Heart Segmentation Advanced",
+    "version": "1.0.0",
+    "created": "2025-06-18T11:24:14.630418",
+    "environment": "local"
+  },
+  "paths": {
+    "project": "c:\\Users\\leonardo.costa\\OneDrive - Lightera, LLC\\Documentos\\GitHub\\pratica-aprendizado-de-maquina\\Heart_Segmentation_Advanced",
+    "dataset": "c:\\Users\\leonardo.costa\\OneDrive - Lightera, LLC\\Documentos\\GitHub\\pratica-aprendizado-de-maquina\\Heart_Segmentation_Advanced\\Task02_Heart",
+    "models": "c:\\Users\\leonardo.costa\\OneDrive - Lightera, LLC\\Documentos\\GitHub\\pratica-aprendizado-de-maquina\\Heart_Segmentation_Advanced\\models",
+    "outputs": "c:\\Users\\leonardo.costa\\OneDrive - Lightera, LLC\\Documentos\\GitHub\\pratica-aprendizado-de-maquina\\Heart_Segmentation_Advanced\\outputs"
+  },
+  "data_config": {
+    "image_size": [
+      128,
+      128
+    ],
+    "num_classes": 3,
+    "class_names": [
+      "Background",
+      "Left Ventricle",
+      "Myocardium"
+    ],
+    "validation_split": 0.2,
+    "test_split": 0.1
+  },
+  "training_config": {
+    "batch_size": 8,
+    "initial_epochs": 100,
+    "learning_rate": 0.001,
+    "early_stopping_patience": 15
+  },
+  "model_config": {
+    "default_backbone": "resnet50",
+    "backbone_options": [
+      "resnet50",
+      "efficientnet-b0",
+      "densenet121"
+    ]
+  },
+  "augmentation_config": {
+    "rotation_range": 15,
+    "translation_range": 0.1,
+    "scaling_range": [
+      0.9,
+      1.1
+    ],
+    "shear_range": 5,
+    "flip_probability": 0.5,
+    "noise_std": 0.01,
+    "blur_sigma": [
+      0.5,
+      1.0
+    ],
+    "contrast_range": [
+      0.8,
+      1.2
+    ],
+    "brightness_range": 0.1
+  },
+  "loss_config": {
+    "dice": 0.4,
+    "focal": 0.4,
+    "boundary": 0.2
+  },
+  "random_seed": 42
+}
